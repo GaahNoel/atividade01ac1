@@ -24,7 +24,7 @@ public class ProductRepository {
         repository.put(7, new Product(7, "Pokemon Shield", 200, 1000));
         repository.put(8, new Product(8, "Lost Planet 3", 80, 70));
         repository.put(9, new Product(9, "Forza Horizon", 50, 90));
-        repository.put(10, new Product(10, "Undertale", 20, 100000));
+        repository.put(10, new Product(10, "Undertale", 18, 100000));
 
     }
     public Product getProductByID(int id)

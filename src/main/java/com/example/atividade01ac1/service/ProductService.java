@@ -1,6 +1,7 @@
 package com.example.atividade01ac1.service;
 
 import java.util.HashMap;
+import java.util.TreeMap;
 
 import com.example.atividade01ac1.model.Product;
 import com.example.atividade01ac1.repository.ProductRepository;
@@ -25,14 +26,14 @@ public class ProductService {
         return product;
 
     }
-    public HashMap<Integer,Product> getProductsInStock()
+    public TreeMap<Integer,Product> getProductsInStock()
     {
         HashMap<Integer,Product> products = repository.getProducts();
-        HashMap<Integer,Product> productsStock = new HashMap<>();
+        TreeMap<Integer,Product> productsStock = new TreeMap<>();
         for(Product p:products.values())
         {
-            if(p.getEstoque() >0)
-                productsStock.put(p.getCodigo(), p);
+            if(p.getStock() >0)
+                productsStock.put(p.getId(), p);
         }
         return productsStock;
     }
@@ -42,8 +43,8 @@ public class ProductService {
         HashMap<Integer,Product> productsGreater20 = new HashMap<>();
         for(Product p:products.values())
         {
-            if(p.getValor() >20)
-                productsGreater20.put(p.getCodigo(), p);
+            if(p.getCost() >20)
+                productsGreater20.put(p.getId(), p);
         }
         return productsGreater20;
     }
@@ -53,10 +54,12 @@ public class ProductService {
         HashMap<Integer,Product> productsLess20 = new HashMap<>();
         for(Product p:products.values())
         {
-            if(p.getValor() <20)
-                productsLess20.put(p.getCodigo(), p);
+            if(p.getCost() <20)
+                productsLess20.put(p.getId(), p);
+                
         }
         return productsLess20;
+        
     } 
 
 }

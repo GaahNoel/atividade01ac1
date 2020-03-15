@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProdcutID</title>
+    <title>ProductID</title>
 </head>
 <body>
-    ProductID
+    <!--if-->
+    <div th:if="${product}">
+        <h1>Produto - <span th:text="${product?.name}"/></h1>
+        <h2>ID do Produto - <span th:text="${product?.id}"/></h2>
+        <h3>Custo R$- <span th:text="${product?.cost}"/></h3>
+        <h3>Quantidade em estoque - <span th:text="${product?.stock}"/></h3>
+     
+    </div>
+    <!--else-->
+    <div th:unless="${product}">
+        <h1>ERROR 101 - Produto Invalido </h1>  
+    </div>
+
 </body>
 </html>

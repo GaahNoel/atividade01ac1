@@ -5,54 +5,78 @@ package com.example.atividade01ac1.model;
  */
 
 public class Product {
-    private int codigo;
-    private String nome;
-    private double valor;
-    private int estoque;
+    private  int id;
+    private  String name;
+    private  double cost;
+    private  int stock;
 
-    public Product(int codigo, String nome, double valor, int estoque) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.valor = valor;
-        this.estoque = estoque;
+    public Product(final int id, final String name, final double cost, final int stock) {
+        this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.stock = stock;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(final int id) {
+        this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(final String name) {
+        this.name = name;
     }
 
-    public double getValor() {
-        return valor;
+    public double getCost() {
+        return cost;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setCost(final double cost) {
+        this.cost = cost;
     }
 
-    public int getEstoque() {
-        return estoque;
+    public int getStock() {
+        return stock;
     }
 
-    public void setEstoque(int estoque) {
-        this.estoque = estoque;
+    public void setStock(final int stock) {
+        this.stock = stock;
     }
 
     @Override
     public String toString() {
-        return "Product [codigo=" + codigo + ", estoque=" + estoque + ", nome=" + nome + ", valor=" + valor + "]";
+        return "Product [id=" + id + ", stock=" + stock + ", name=" + name + ", cost=" + cost + "]";
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Product other = (Product) obj;
+        if (id != other.id)
+            return false;
+        return true;
+    }
+
+    
 
     
     
