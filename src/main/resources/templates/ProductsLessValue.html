@@ -3,20 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreaterThan20</title>
+    <title>LessThanValue</title>
+    <style>
+        th{
+            background:#CCC;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+        }
+        #Name{
+            display:flex;
+            justify-content: center;
+        }
+        h2{
+            display:flex;
+            justify-content: center;
+            color:black;
+            padding: 15px;
+            background-color:#CCC;
+        }
+    </style>
 </head>
 <body>
-    <h1>Produtos com valor abaixo de <stan th:text="${value}"/>: </h1> 
-    <h3>
-        <table>
-            <tr th:each="products:${products}">
-            <td th:text="${products?.id}"/>
-            <td th:text="${products?.name}"/>
-            <td th:text="${products?.cost}"/>
-              
-        </tr>
-        </table>
-    </h3>
-    
+    <div>
+        <h1 id="Name">Gabriel Antonio Noel - 180274</h1>
+        <h2>Produtos com valor abaixo de R$<stan th:text="${value}"/> </h2> 
+        <h3>
+            <table>
+                <table width="500px">
+                    <thead>
+                        <tr >
+                            <th >ID</th>
+                            <th >Nome</th>
+                            <th >Valor(R$)</th>
+                            <th >Estoque</th>
+                        </tr>
+                    </thead>
+                <tr th:each="products:${products}">
+                <td th:text="${products?.id}"/>
+                <td th:text="${products?.name}"/> 
+                <td th:text="${products?.cost}"/>     
+                <td th:text="${products?.stock}"/>
+                
+            </tr>
+            </table>
+        </h3>
+    </div>
 </body>
 </html>

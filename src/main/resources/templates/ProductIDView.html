@@ -4,19 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProductID</title>
+    <style>
+        #Erro{
+            color:white;
+            padding: 25px;
+            background-color:red;
+            
+        }
+        th{
+            background:#CCC;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+        }
+        #Name{
+            display:flex;
+            justify-content: center;
+        }
+        h2{
+            display:flex;
+            justify-content: center;
+            color:black;
+            padding: 15px;
+            background-color:#CCC;
+        }
+        
+    </style>
 </head>
 <body>
+           
     <!--if-->
-    <div th:if="${product}">
-        <h1>Produto - <span th:text="${product?.name}"/></h1>
-        <h2>ID do Produto - <span th:text="${product?.id}"/></h2>
-        <h3>Custo R$- <span th:text="${product?.cost}"/></h3>
-        <h3>Quantidade em estoque - <span th:text="${product?.stock}"/></h3>
-     
+        <div th:if="${product}">
+            <h1 id="Name">Gabriel Antonio Noel - 180274</h1>
+            <h2 id="Titulo">Produto ID = <stan th:text="${product.id}"/> </h2>
+            <h3> 
+                <table>
+                    <table width="500px">
+                        <thead>
+                            <tr >
+                                <th >ID</th>
+                                <th >Nome</th>
+                                <th >Valor(R$)</th>
+                                <th >Estoque</th>
+                            </tr>
+                        </thead>
+                    <tr>
+                        <td th:text="${product?.id}"/>
+                        <td th:text="${product?.name}"/>   
+                        <td th:text="${product?.cost}"/>
+                        <td th:text="${product?.stock}"/>
+                    
+                    </tr>
+                </table>
+            </h3> 
     </div>
     <!--else-->
     <div th:unless="${product}">
-        <h1>ERROR 101 - Produto Invalido </h1>  
+        <h1 id="Name">Gabriel Antonio Noel - 180274</h1>
+        <h2 id="Erro">ERRO 101 - Produto Invalido</h2>  
     </div>
 
 </body>
