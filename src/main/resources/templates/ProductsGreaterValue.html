@@ -23,6 +23,9 @@
             padding: 15px;
             background-color:#CCC;
         }
+        th{
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -30,8 +33,7 @@
         <h1 id="Name">Gabriel Antonio Noel - 180274</h1>
         <h2>Produtos com valor acima de R$<stan th:text="${value}"/> </h2> 
         <h3>
-            <table>
-                <table width="500px">
+            <table width="500px">
                     <thead>
                         <tr >
                             <th >ID</th>
@@ -40,12 +42,13 @@
                             <th >Estoque</th>
                         </tr>
                     </thead>
+                    <tbody>
                 <tr th:each="products:${products}">
                 <td th:text="${products?.id}"/>
                 <td th:text="${products?.name}"/> 
                 <td th:text="${products?.cost}"/>     
                 <td th:text="${products?.stock}"/>
-                
+            </tbody>
             </tr>
             </table>
         </h3>
