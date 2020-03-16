@@ -37,28 +37,28 @@ public class ProductService {
         }
         return productsStock;
     }
-    public HashMap<Integer,Product> getProductsGreater20()
+    public HashMap<Integer,Product> getProductsGreaterValue(double value)
     {
         HashMap<Integer,Product> products = repository.getProducts();
-        HashMap<Integer,Product> productsGreater20 = new HashMap<>();
+        HashMap<Integer,Product> productsGreaterValue = new HashMap<>();
         for(Product p:products.values())
         {
-            if(p.getCost() >20)
-                productsGreater20.put(p.getId(), p);
+            if(p.getCost() >value)
+                productsGreaterValue.put(p.getId(), p);
         }
-        return productsGreater20;
+        return productsGreaterValue;
     }
-    public HashMap<Integer,Product> getProductsLess20()
+    public HashMap<Integer,Product> getProductsLessValue(double value)
     {
         HashMap<Integer,Product> products = repository.getProducts();
-        HashMap<Integer,Product> productsLess20 = new HashMap<>();
+        HashMap<Integer,Product> productsLessValue = new HashMap<>();
         for(Product p:products.values())
         {
-            if(p.getCost() <20)
-                productsLess20.put(p.getId(), p);
+            if(p.getCost() <value)
+                productsLessValue.put(p.getId(), p);
                 
         }
-        return productsLess20;
+        return productsLessValue;
         
     } 
 

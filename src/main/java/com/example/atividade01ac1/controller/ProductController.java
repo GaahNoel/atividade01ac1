@@ -34,20 +34,22 @@ public class ProductController {
         
         return mv;
     }
-    @GetMapping("/greater20")
-    public ModelAndView greater20()
+    @GetMapping("/greatervalue/{value}")
+    public ModelAndView greaterValue(@PathVariable("value")double value)
     {
-        ModelAndView mv = new ModelAndView("ProductsGreater20");
-        HashMap<Integer,Product> hm = ps.getProductsGreater20();
+        ModelAndView mv = new ModelAndView("ProductsGreaterValue");
+        HashMap<Integer,Product> hm = ps.getProductsGreaterValue(value);
         mv.addObject("products", hm.values());
+        mv.addObject("value", value);
         return mv;
     }
-    @GetMapping("/less20")
-    public ModelAndView less20()
+    @GetMapping("/lessvalue/{value}")
+    public ModelAndView lessValue(@PathVariable("value")double value)
     {
-        ModelAndView mv = new ModelAndView("ProductsLess20");
-        HashMap<Integer,Product> hm = ps.getProductsLess20();
+        ModelAndView mv = new ModelAndView("ProductsLessValue");
+        HashMap<Integer,Product> hm = ps.getProductsLessValue(value);
         mv.addObject("products", hm.values());
+        mv.addObject("value", value);
         return mv;
     }
     @GetMapping("/instock")
